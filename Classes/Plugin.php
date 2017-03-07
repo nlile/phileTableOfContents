@@ -57,7 +57,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements
             
             // If for whatever reason the HTML fails to load just give up
             try {
-                $doc->loadHTML($data['data']['content']);
+                $doc->loadHTML('<meta http-equiv="content-type" content="text/html; charset=utf-8">'.$data['data']['content']);}
             }
             catch(\Exception $e) {
                 return;
